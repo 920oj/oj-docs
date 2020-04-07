@@ -23,7 +23,10 @@ h2 {
   font-weight: 600;
   font-size: 1.5rem;
   margin-top: 2rem;
+  padding: 0.4em 0.5em;
   margin-bottom: 0.5rem;
+  border-bottom: 2px solid #DDDDDD; 
+  border-left: 5px solid #22A6E0;
 }
 
 h3 {
@@ -31,6 +34,8 @@ h3 {
   font-size: 1.25rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+  padding: 0.4em ;
+  border-left: 2px solid #22A6E0;
 }
 
 p {
