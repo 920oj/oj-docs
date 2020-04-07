@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { API_KEY } = process.env;
+const { API_KEY, GA_KEY } = process.env;
 
 export default {
   mode: 'spa',
@@ -66,9 +66,10 @@ export default {
   },
   env: {
     API_KEY,
+    GA_KEY
   },
   googleAnalytics: {
-    id: 'UA-162969655-1',
+    id: GA_KEY,
   },
   /*
   ** Build configuration
