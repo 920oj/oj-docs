@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="article">
     <Header :title="content.title" :date="content.updatedAt" />
     <Contents :text="content.contents" />
     <Footer />
@@ -18,7 +18,7 @@ export default {
       meta: [
         { hid: 'description', name: 'description', content: this.content.description },
         { hid: 'og:title', name: 'og:title', content: 'OJのドキュメント置き場' },
-        { hid: 'og:url', name: 'og:url', content: 'https://d.920oj.net/' },
+        { hid: 'og:url', name: 'og:url', content: 'https://d.920oj.net/' + this.$route.name},
         { hid: 'og:type', name: 'og:type', content: 'website' },
         { hid: 'og:description', name: 'og:description', content: this.content.title + ' | OJのドキュメント置き場' },
         { hid: 'og:image', property: 'og:image', content: 'https://d.920oj.net/img/ogp.jpg' },
@@ -33,11 +33,11 @@ export default {
     Contents,
     Footer,
   },
-  async asyncData({ app }) {
+  async asyncData({ app, params }) {
     const config = { 
       'X-API-KEY': process.env.API_KEY
     }
-    const response = await app.$axios.$get('https://ojdocs.microcms.io/api/v1/docs/GhMW5KLqH', { headers: config });
+    const response = await app.$axios.$get(`https://ojdocs.microcms.io/api/v1/docs/${params.id}`, { headers: config });
     return {
       content: response
     }
