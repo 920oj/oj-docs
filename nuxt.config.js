@@ -1,3 +1,5 @@
+require('dotenv').config()
+const { API_KEY } = process.env;
 
 export default {
   mode: 'spa',
@@ -43,6 +45,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
     ['@nuxtjs/moment', ['ja']],
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Axios module configuration
@@ -56,6 +59,9 @@ export default {
     html: true,
     linkify: true,
     typography: true,
+  },
+  env: {
+    API_KEY,
   },
   /*
   ** Build configuration
