@@ -3,7 +3,7 @@
     <div class="header">
       <h1 class="header-title">{{title}}</h1>
       <p>by 920OJ</p>
-      <p class="header-date">最終更新日: {{date}}</p>
+      <p class="header-date">最終更新日: {{formatDate(date)}}</p>
     </div>
   </div>
 </template>
@@ -13,7 +13,12 @@ export default {
   props: [
     'title',
     'date'
-  ]
+  ],
+  methods: {
+    formatDate: function (date) {
+      return this.$moment(date).format('YYYY/MM/DD');
+    }
+  },
 
 }
 </script>
