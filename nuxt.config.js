@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { API_KEY } = process.env;
+const { API_KEY, GA_KEY } = process.env;
 
 export default {
   mode: 'spa',
@@ -39,6 +39,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/google-analytics'
   ],
   /*
   ** Nuxt.js modules
@@ -65,6 +66,10 @@ export default {
   },
   env: {
     API_KEY,
+    GA_KEY
+  },
+  googleAnalytics: {
+    id: GA_KEY,
   },
   /*
   ** Build configuration
@@ -75,5 +80,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  generate: {
+    fallback:true,
   }
 }
