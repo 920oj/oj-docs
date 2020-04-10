@@ -63,6 +63,11 @@ img {
   margin: 1rem 0;
 }
 
+ul {
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
 @media screen and (min-width: 700px) {
   .contents {
     max-width: 700px;
